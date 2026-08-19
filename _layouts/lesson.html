@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+{% if page.publish == true %}  
+
+  {% for live in page.live %}
+    {% if live.link %}
+      <a href="{{ live.link }}"><h2>{{ live.text | capitalize }}</h2></a>
+    {% endif %}
+  {% endfor %}
+
+	{% if page.videos %}
+    <h2>To watch</h2>
+    {% for each in page.videos %}
+      <iframe width="560" height="315" src="{{ each }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    {% endfor %}
+  {% endif %}
+
+  {% if page.toread %}
+    <h2>To read</h2>
+    <ol>
+    {% for each in page.toread %}
+      <li>{{ each | markdownify | remove: '<p>' | remove: '</p>'}}</li>
+    {% endfor %}
+    </ol>
+  {% endif %}
+
+  {% if page.notes %}
+    <h2>Notes</h2>
+    <ol>
+    {% for each in page.notes %}
+      <li>{{ each | markdownify }}</li>
+    {% endfor %}
+    </ol>
+  {% endif %}
+
+  {% if page.extra %}
+    <h2>Extras</h2>
+    <ul>
+    {% for each in page.extra %}
+        <li>{{ each | markdownify }}</li>
+    {% endfor %}
+    </ul>  
+  {% endif %}
+
+{% else %}
+
+	<mybox>
+	  <i class="fa fa-exclamation-circle"></i> material not online yet
+	</mybox>
+
+{% endif %}

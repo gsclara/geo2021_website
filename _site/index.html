@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title>Home | GEO5021</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
+	<div class="container">
+		<a class="navbar-brand" href="https://3d.bk.tudelft.nl"><img class="tud-logo" src="/courses/geo5021/img/3dgeoinfo.png" /></a>
+		<a class="navbar-brand" href="/courses/geo5021/">GEO5021</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<ul class="navbar-nav me-auto">
+	  		
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/about/">about</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/news/">news</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/les/">lessons</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/hw/">homework</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="https://discord.gg/VKeSqYS6v">discord</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/">etc</a>
+							
+						</li>
+	  			
+			
+	  	</ul>
+	  	<ul class="navbar-nav">
+	  		<li class="nav-item">
+	  			<button class="nav-link" onclick="toggleTheme()" title="Toggle dark mode" style="background:none;border:none">
+	  				<i id="theme-icon" class="fas fa-moon"></i>
+	  			</button>
+	  		</li>
+	  	</ul>
+	  </div>
+	</div>
+</nav>
+
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    <h1 id="modeling-wind-and-dispersion">Modeling wind and dispersion</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="alert alert-success" role="alert">
+				<i class="fas fa-map-marked-alt"></i> Classes are mostly in BK Room Z, but please check the schedule. Friday's help session is in the Geolab (BG.Oost.620).
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card bg-light border-light">
+			  <div class="card-body">
+			    <h5 class="card-title">recent news</h5>
+			    
+			    
+			      <p><span class="badge">Sep 01</span> Draft schedule and <a href="https://3d.bk.tudelft.nl/courses/geo1004/hw/0/">homework 0</a> are online
+</p>
+			    
+			      <p><span class="badge">Aug 17</span> The GEO5021 2026 website is up! welcome to the course!
+</p>
+			    
+			    <a href="/courses/geo5021/news/">all news</a>
+			  </div>
+			</div>
+			<br />
+		</div>
+		<div class="col-md-9">
+			<div class="table-responsive">
+				<table class="table table-hover">
+				  <thead class="table-light">
+				    <tr>
+				      <th scope="col">week</th>
+				      <th scope="col">tuesday 10:45</th>
+				      <th scope="col">thursday 8:45</th>
+				      <th scope="col"></th>
+				      <th scope="col">other to dos</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.1<br /><small class="fw-normal">Sep&nbsp;01&nbsp;-&nbsp;Sep&nbsp;05</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/intro"><i class="fas fa-book-reader"></i> lesson 1.1 (intro)</a>
+			  						
+		  							
+		  								<br /><i class="fas fa-chalkboard-teacher"></i> course and homework 0 intro
+			  						
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/ABL"><i class="fas fa-book-reader"></i> lesson 1.2 (ABL)</a>
+			  						
+		  							
+		  								<br /><i class="fas fa-chalkboard-teacher"></i> Winds
+			  						
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					read <a href="about/">about</a> page, start <a href="hw/0">homework 0</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.2<br /><small class="fw-normal">Sep&nbsp;08&nbsp;-&nbsp;Sep&nbsp;12</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/ABL"><i class="fas fa-book-reader"></i> lesson 2.1 (ABL)</a>
+			  						
+		  							
+		  								<br /><i class="fas fa-chalkboard-teacher"></i> Winds
+			  						
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/maths"><i class="fas fa-book-reader"></i> lesson 2.2 (maths)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					start <a href="hw/1">homework 1</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.3<br /><small class="fw-normal">Sep&nbsp;15&nbsp;-&nbsp;Sep&nbsp;19</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/urbanCFD"><i class="fas fa-book-reader"></i> lesson 3.1 (urbanCFD)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/1">homework 1</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.4<br /><small class="fw-normal">Sep&nbsp;22&nbsp;-&nbsp;Sep&nbsp;26</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/equations"><i class="fas fa-book-reader"></i> lesson 4.1 (equations)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall P
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/1">homework 1</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.5<br /><small class="fw-normal">Sep&nbsp;29&nbsp;-&nbsp;Oct&nbsp;03</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/tke"><i class="fas fa-book-reader"></i> lesson 5.1 (tke)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					<strong>submit <a href="hw/1">homework 1</a> (Sep 25)</strong>, start <a href="hw/2">homework 2</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.6<br /><small class="fw-normal">Oct&nbsp;06&nbsp;-&nbsp;Oct&nbsp;10</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/turbulence"><i class="fas fa-book-reader"></i> lesson 6.1 (turbulence)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/2">homework 2</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.7<br /><small class="fw-normal">Oct&nbsp;13&nbsp;-&nbsp;Oct&nbsp;17</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 7.1 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 7.2 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/2">homework 2</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.8<br /><small class="fw-normal">Oct&nbsp;20&nbsp;-&nbsp;Oct&nbsp;24</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 8.1 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 8.2 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/2">homework 2</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.9<br /><small class="fw-normal">Oct&nbsp;27&nbsp;-&nbsp;Oct&nbsp;31</small></th>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 9.1 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+			  						
+			  							<a href="les/support"><i class="fas fa-book-reader"></i> lesson 9.2 (support)</a>
+			  						
+		  							
+			  						
+			  							<br /><i class="fas fa-map-marked-alt"></i> A+BE Hall Z
+			  						
+		  						
+			  				</td>
+			  				<td>
+			  					
+				  					help session
+				  					
+				  						<br /><i class="fas fa-map-marked-alt"></i> A+BE Geolab
+				  					
+				  				
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					continue <a href="hw/2">homework 2</a>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  		
+				  		
+				  		
+				  		
+		  				
+		  				
+		  				
+		  				
+				  		<tr>
+				  			<th scope="row">1.10<br /><small class="fw-normal">Nov&nbsp;03&nbsp;-&nbsp;Nov&nbsp;07</small></th>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+			  				<td>
+			  					
+			  				</td>
+					  		<td>
+			  					
+			  					
+			  					
+			  					<strong>submit <a href="hw/2">homework 2</a> (Nov 02)</strong>
+				  			</td>
+				  		</tr>
+				  		
+				  	
+				  	<tr>
+				  		<th scope="row">2.3 <br /><small class="fw-normal">Nov&nbsp;23&nbsp;-&nbsp;Nov&nbsp;27</small></th>
+				  		<td></td>
+			  			<td></td>
+			  			<td></td>
+			  			<td>
+			  				resits for <strong><a href="hw/resit/">assignments</a></strong> (Nov&nbsp;27&nbsp;@&nbsp;17:00)<br />
+			  				tbd</td>
+				  	</tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+	    </div>
+		</div>
+    <footer class="footer">
+	<div class="container">
+		<hr>
+		<p class="text-center muted credit"><small>
+			The teaching materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i> Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence.
+		</small></p>
+	</div>
+</footer>
+<script src="/courses/geo5021/js/jquery.min.js"></script>
+<script src="/courses/geo5021/js/popper.min.js"></script>
+<script src="/courses/geo5021/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

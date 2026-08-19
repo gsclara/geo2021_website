@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title>Resit individual or group assigment | GEO5021</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
+	<div class="container">
+		<a class="navbar-brand" href="https://3d.bk.tudelft.nl"><img class="tud-logo" src="/courses/geo5021/img/3dgeoinfo.png" /></a>
+		<a class="navbar-brand" href="/courses/geo5021/">GEO5021</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<ul class="navbar-nav me-auto">
+	  		
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/about/">about</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/news/">news</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/les/">lessons</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/hw/">homework</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="https://discord.gg/VKeSqYS6v">discord</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/">etc</a>
+							
+						</li>
+	  			
+			
+	  	</ul>
+	  	<ul class="navbar-nav">
+	  		<li class="nav-item">
+	  			<button class="nav-link" onclick="toggleTheme()" title="Toggle dark mode" style="background:none;border:none">
+	  				<i id="theme-icon" class="fas fa-moon"></i>
+	  			</button>
+	  		</li>
+	  	</ul>
+	  </div>
+	</div>
+</nav>
+
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    <h4>Assignment resit</h4>
+
+	
+
+	
+
+	
+
+	
+		<h2>Resit individual or group assigment</h2>
+		
+			
+				<p>This is a preparation assigment. It is unmarked and has no deadline, but it will help you to do the following assignments.</p>
+			
+			<hr />
+<ul id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a>    <ul>
+      <li><a href="#defining-lod-13" id="markdown-toc-defining-lod-13">Defining LoD 1.3</a></li>
+      <li><a href="#input-data-to-test-your-program" id="markdown-toc-input-data-to-test-your-program">Input data to test your program?</a></li>
+      <li><a href="#requirements-for-the-cityjson-output" id="markdown-toc-requirements-for-the-cityjson-output">Requirements for the CityJSON output</a></li>
+      <li><a href="#some-tips" id="markdown-toc-some-tips">Some tips</a></li>
+      <li><a href="#report" id="markdown-toc-report">Report</a></li>
+    </ul>
+  </li>
+  <li><a href="#marking" id="markdown-toc-marking">Marking</a></li>
+  <li><a href="#deliverables" id="markdown-toc-deliverables">Deliverables</a></li>
+</ul>
+<hr />
+
+<p><img class="img-fluid" alt="TU Delft LoDs" src="https://3d.bk.tudelft.nl/lod/lodtud.png" /></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The aim of this assignment is to implement a method to generalise a 3D city model.</p>
+
+<p>In short, you have to write a program that reads any CityJSON file that contains buildings in LoD 2.2, create the new LoD 1.3 buildings based on the 2.2 ones and output a new file containing both LoDs for each building.</p>
+
+<p>Everything should be implemented in C++ with the help of any packages from the <a href="https://www.cgal.org">CGAL</a> library. You are also free to use any other external libraries, but only for reading and writing files, such as Niels Lohmann’s <a href="https://github.com/nlohmann/json">JSON for Modern C++</a> library.</p>
+
+<h3 id="defining-lod-13">Defining LoD 1.3</h3>
+
+<p>LoD 1.3 (see image above) merges groups of adjacent roof polygons into single polygons that are horizontal. For every newly created roof polygon, its height should be set at 70% of the difference between the eave and the ridge. The ground should be kept at the height of the ground of the LoD 2.2.</p>
+
+<p><img src="lod12.png" alt="" width="600px" /></p>
+
+<p>For more details about the different LoDs, you can read this paper:</p>
+
+<div class="filteredelement"><strong>An improved LOD specification for 3D building models</strong>. Filip Biljecki, Hugo Ledoux, and Jantien Stoter. <em>Computers, Environment and Urban Systems</em>, 59: 25&ndash;37, 2016. <br /> <a href="https://repository.tudelft.nl/islandora/object/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5/datastream/OBJ/download"><i class="fas fa-file-pdf"></i> PDF</a> <a href="http://doi.org/10.1016/j.compenvurbsys.2016.04.005"><i class="fas fa-external-link-alt"></i> DOI</a> <a href="#bibBiljecki16c" data-bs-toggle="collapse"><i class="fas fa-caret-square-down"></i> BibTeX</a><div id="bibBiljecki16c" class="collapse" tabindex="-1"><pre class="bibtex">@inproceedings{Biljecki16c,
+  author = {Biljecki, Filip and Ledoux, Hugo and Stoter, Jantien},
+  booktitle = {Computers, Environment and Urban Systems},
+  pages = {25--37},
+  title = {An improved {LOD} specification for {3D} building models},
+  year = {2016},
+  vol = {59},
+  doi = {10.1016/j.compenvurbsys.2016.04.005}
+}</pre></div></div>
+
+<p>The procedure to create the LoD 1.3 model has two parts that are relatively open: (1) computing adjacent groups of roof polygons, and (2) calculating the heights of the roof eaves and ridges. Based on what you’ve learned in this course, you should come up with your own methodology and describe it your report, including pros and cons of that methodology.</p>
+
+<h3 id="input-data-to-test-your-program">Input data to test your program?</h3>
+
+<p>You can test your code using files from the <a href="https://3dbag.nl/">3DBAG</a>. Note that you can use <a href="https://github.com/cityjson/cjio">cjio</a> to make smaller test files by removing LoDs or creating subsets of tiles.</p>
+
+<h3 id="requirements-for-the-cityjson-output">Requirements for the CityJSON output</h3>
+
+<ol>
+  <li>CityJSON version 2.0 (both for input and output)</li>
+  <li>Only <code class="language-plaintext highlighter-rouge">Building</code> and <code class="language-plaintext highlighter-rouge">BuildingPart</code> have to be generalised.</li>
+  <li>You should add the extra LoDs in the city objects where the LoD2.2 is already present, ie it could be directly for a <code class="language-plaintext highlighter-rouge">Building</code> or a <code class="language-plaintext highlighter-rouge">BuildingPart</code>.</li>
+  <li>The LoD 1.3 should be a <code class="language-plaintext highlighter-rouge">Solid</code> and be geometrically valid (verify this with <a href="https://github.com/tudelft3d/val3dity">val3dity</a>).</li>
+  <li>The complete CityJSON file you produce must be schematically valid according to the CityJSON schemas <a href="https://validator.cityjson.org">(use <code class="language-plaintext highlighter-rouge">cjval</code> to verify this)</a>.</li>
+</ol>
+
+<h3 id="some-tips">Some tips</h3>
+
+<ul>
+  <li>You should consider that the buildings in a 3D city model might not be geometrically valid. So, your algorithms must deal with this (and not crash because of geometries that are not watertight or self-intersect). Reflect about this in the report.</li>
+  <li>The CityJSON file you read as input will be syntactically valid and of version 2.0.</li>
+  <li>The validator <a href="https://github.com/cityjson/cjval">cjval</a> can be used locally to verify the syntax of the files you create, it’s faster and simpler to use than the web-app.</li>
+  <li>CGAL has many packages that can be of great help: explore!</li>
+  <li>You can visualise the CityJSON files using <a href="https://ninja.cityjson.org/">ninja.cityjson.org</a>, QGIS (using the <a href="https://plugins.qgis.org/plugins/CityJSON-loader/">CityJSON Loader plugin</a>), or <a href="https://github.com/tudelft3d/azul">azul</a> (macOS only).</li>
+</ul>
+
+<h3 id="report">Report</h3>
+
+<p>You need to include a simple report outlining your work. It should document the main steps in your methodology, explain briefly how you implemented them, and why you chose to implement them in this manner. Focus on high-level descriptions of how things work and the engineering/design choices that you made, not on explaining your code line by line. Discuss the pros and cons of your method, assess the quality of your results using different 3DBAG tiles and measure the performance of your code. We don’t expect perfect results—just document honestly what works well and what doesn’t.</p>
+
+<p>We expect maximum 10 pages for the report (with plenty of figures included). Don’t forget to write your name and student number.</p>
+
+<h2 id="marking">Marking</h2>
+
+<table class="table table-responsive table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th style="text-align: right">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code runs without modifications</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td>code outputs schema-valid files</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td>LoD 1.3 quality</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td>report</td>
+      <td style="text-align: right">4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="deliverables">Deliverables</h2>
+
+<p>You have to submit a ZIP file (or another compressed format) with the following files:</p>
+
+<ol>
+  <li>Your source code (everything that is needed to run/compile it).</li>
+  <li>Your report in PDF.</li>
+</ol>
+
+<p>Do <em>not</em> submit your assignment by email, but use this <a href="https://www.dropbox.com/request/sj9i8iu6r982xx9yw7dt">Dropbox link</a>.</p>
+
+<p>[last updated: 2026-06-15 11:04]</p>
+
+		
+	
+
+
+	    </div>
+		</div>
+    <footer class="footer">
+	<div class="container">
+		<hr>
+		<p class="text-center muted credit"><small>
+			The teaching materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i> Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence.
+		</small></p>
+	</div>
+</footer>
+<script src="/courses/geo5021/js/jquery.min.js"></script>
+<script src="/courses/geo5021/js/popper.min.js"></script>
+<script src="/courses/geo5021/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+title: GEO5021 
+
+coursename: Modelling winds and dispersion
+quarter: 1
+start: 2026-09-01T10:45
+
+period1: "tuesday 10:45"
+period2: "thursday 8:45"
+labs/support: "friday 10:45"
+
+assignment1: 2026-09-25T17:00
+assignment2: 2026-10-30T17:00
+resit: 2026-11-27T17:00
+
+# Home
+# url: http://localhost
+# baseurl: ""
+
+#Server
+url: https://3d.bk.tudelft.nl
+baseurl: "/courses/geo5021"
+discord: "https://discord.gg/VKeSqYS6v"
+
+nav:
+  - name: about
+    path: about/
+  - name: news
+    path: news/
+  - name: lessons
+    path: les/
+  - name: homework
+    path: hw/
+  - name: discord
+    path: https://discord.gg/VKeSqYS6v
+  - name: etc
+    subnav:
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+
+# Lessons and homework
+page_gen-dirs: true
+page_gen:
+  - data: 'lessons'
+    template: 'lesson'
+    name: 'lesson'
+    dir: 'les'
+  # - data: 'homework'
+  #   template: 'assignment'
+  #   name: 'number'
+  #   dir: 'hw'
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

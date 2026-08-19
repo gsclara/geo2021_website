@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+  {% include head.html %}
+  <body>
+    {% include navbar.html %}
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    {{ content }}
+	    </div>
+		</div>
+    {% include footer.html %}
+    <script>
+      $(document).ready( function () {
+        $('#overallMarks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#hw1Marks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#hw2Marks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#hw3Marks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#midtermMarks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#finalExamMarks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+        $('#resitExamMarks').DataTable({
+          "order": [[ 0, "asc" ]],
+          "pageLength": 50
+        });
+      } );
+    </script>
+  </body>
+</html>

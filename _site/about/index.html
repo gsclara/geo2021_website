@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title>About | GEO5021</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
+	<div class="container">
+		<a class="navbar-brand" href="https://3d.bk.tudelft.nl"><img class="tud-logo" src="/courses/geo5021/img/3dgeoinfo.png" /></a>
+		<a class="navbar-brand" href="/courses/geo5021/">GEO5021</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<ul class="navbar-nav me-auto">
+	  		
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/about/">about</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/news/">news</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/les/">lessons</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/hw/">homework</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="https://discord.gg/VKeSqYS6v">discord</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/">etc</a>
+							
+						</li>
+	  			
+			
+	  	</ul>
+	  	<ul class="navbar-nav">
+	  		<li class="nav-item">
+	  			<button class="nav-link" onclick="toggleTheme()" title="Toggle dark mode" style="background:none;border:none">
+	  				<i id="theme-icon" class="fas fa-moon"></i>
+	  			</button>
+	  		</li>
+	  	</ul>
+	  </div>
+	</div>
+</nav>
+
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    <h1 id="about">About</h1>
+
+<p>GEO5021: Modelling wind flows and dispersion is an elective part of the <a href="https://www.tudelft.nl/onderwijs/opleidingen/masters/gm/msc-geomatics/">MSc Geomatics</a> programme at the <a href="https://www.tudelft.nl">Delft University of Technology</a>.
+The course navigates the use of Computational Fluid Dynamics to predict air and pollution around the built environment, predictions that can be used to improve the cities we currently leave in or the future designs.</p>
+
+<p>During the contact hours (3 x 2h weekly), we will generally have 4h lectures (Tuesday/Thursday) and 2h laboratory (Friday) at the beginning of the quarter.
+As the quarter progresses and theory is covered, the rest of the hours will be used to support the assignments development and reply to questions.
+Strong advice: use those hours of support to actually do the assignments.</p>
+
+<p>Apart from the formal contact hours, students are expected to study the lessons on their own by studying the materials that are provided in this website.
+However, the idea is to learn mostly by doing—spending more time actively working on assignments rather than passively listening to lectures.</p>
+
+<p>You can ask us questions online (through Discord) at any time, but during the contact hours we will be fully available to help you in person.</p>
+
+<p>The activities planned for the day will be announced in advance through the course website.</p>
+
+<p>All the assignments are OpenFOAM cases that would require the use of postprocessing scripts (python) or paraview.
+Homework 0 is an unmarked assignment to help you get set up and working correctly for the other homeworks. 
+Homeworks 1 and 2 are the final assignments that involve combining multiple topics of the course into a creative solution.</p>
+
+<h2 id="how-to-best-follow-this-course">How to best follow this course</h2>
+
+<p>Every week:</p>
+<ol>
+  <li>Go the course homepage and check the week’s schedule.</li>
+  <li>Come to class and in your own time, study the lessons of the week by reading the materials. The course works best if you at least skim it in advance, but we know that this is not always possible.</li>
+  <li>If you have any doubts about the contents of the lessons, ask questions on Discord. Asking on the geo5021 text channel is best, but a DM is okay if you are uncomfortable with that. If you ask during the contact hours, we will answer quickly. If not, we will still answer, but it might take longer.</li>
+  <li>After studying the lessons of the week, work on the assignment(s) listed for that week.</li>
+  <li>Do not miss the laboratory sessions, those put you up to speed to run OpenFOAM properly.</li>
+  <li>As you work on an assignment, discuss it with your classmates and with us. High-level collaboration (eg general strategies to tackle a problem) is encouraged. Reusing others’ code is not and will be considered plagiarism.</li>
+</ol>
+
+<p>All deadlines and rules are posted in this website, but we can be flexible if needed (such as if you get sick), but this should be done before the deadline.
+We will also be widely available to help you on Discord and in person too, so don’t hesitate to ask questions.
+General software or programming questions are also okay, so please ask ahead.
+No one is born an expert, so there are no dumb questions.</p>
+
+<h2 id="external-help-plagiarism-and-ai">External help, plagiarism and AI</h2>
+
+<p>In short, you are welcome to use external help or AI assistants as long as:</p>
+<ol>
+  <li>all parts of the work that you submit are fully understood and checked by you, and</li>
+  <li>how you use any form of external help is documented and acknowledged in the submission.</li>
+</ol>
+
+<p>With code, this policy means that you’ve read every line, you can explain what a block of a few lines of code does, and you can justify why you have chosen to implement things in a certain manner.
+As for reports, it means that you’ve carefully read the text, verified each claim and can personally vouch for each statement in it.</p>
+
+<p>If external help or AI assistants are used, this should be documented in detail in the submission, including what was used (eg LLM model and version), how it was used (eg through prompts on the web or through a client with direct source code access) and how much of the code/report is generated by it.</p>
+
+<p>In order to enforce this policy, some groups will be asked to explain some parts of their report.
+These parts will be selected by the teachers.
+Groups will be mainly selected randomly, but groups with suspicious deliverables will also be selected.</p>
+
+<p>Violations of this policy will be considered plagiarism and will result in disciplinary action from the faculty.
+Note that depending on its severity, the faculty’s decision could involve a zero in the assignment, exclusion from one or all exams for a year, or expulsion.</p>
+
+<h2 id="discord">Discord?</h2>
+
+<p><a href="https://discordapp.com">Discord</a> is a service for text and voice chats plus video calls that is mostly used by gamers.
+You can install the app (better) or use it directly from the browser (still okay).</p>
+
+<p>First, join the Geomatics server’s <strong><a href="https://discord.gg/VKeSqYS6v">geo5021 text channel</a></strong>.
+This is a public text chat, which you can use to post questions, to discuss, or for general chatting.
+It is usually best to ask questions here, since everyone can benefit from the answers.</p>
+
+<p>There are also a few <strong>voice channels</strong> in the Geomatics server.
+These are public voice chats, which you join manually by clicking on them.
+If you join one, you will listen to what the others in the voice channel are saying (unless you deafen it -&gt; headphones icon) and everything you say will be also heard by the others (unless you mute it -&gt; mic icon).
+You are free to use them anytime to discuss anything with the rest of your classmates (who are in the channel at that point).</p>
+
+<p>Once you have joined the voice channel, you can also use it to <strong>share your screen</strong> (or a single window) with your classmates (Go Live -&gt; icon with display and arrow).
+When you do so, a red LIVE icon will appear next to your username, and people will be able to click on your user and see your stream.</p>
+
+<p>If you want to ask very detailed <strong>questions</strong> that are only relevant to your work, it is probably better to do a separate one-to-one or small group call (with possible video and/or screen sharing).
+For that, let us know on the text channel (better) or send us a DM (still okay).
+When one of us is free, we will add you as a friend (or you can do that anytime!), and we can then start the call.</p>
+
+<p>Now, if you are not together with your assignment groupmate or want to talk to other classmates, how about doing a one-to-one or group call with them?</p>
+
+<h2 id="expected-prior-knowledge">Expected prior knowledge</h2>
+
+<p>Anyone is free to follow the course.
+Formally, the following courses/knowledge are required prerequisites:</p>
+<ol>
+  <li>GEO1000 or equivalent (or knowledge of scripting/programming);</li>
+</ol>
+
+<h2 id="responsible-staff">Responsible staff</h2>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<a href="https://research.tudelft.nl/en/persons/c-garcia-sanchez/"><img class="img-fluid rounded-circle w-75 h-70" src="/courses/geo5021/img/clara.jpg" alt="Clara Garcia-Sanchez photo" /></a>
+			<h4>Clara Garcia-Sanchez<br /></h4>
+			<p>
+			  gsclara&#35;5352 | 
+			  <a href="https://3d.bk.tudelft.nl/gsclara/"><i class="fas fa-home"></i></a> 
+			  |
+			  <a href="mailto:C.Garcia-Sanchez@tudelft.nl"><i class="fas fa-envelope"></i></a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<a href="https://3d.bk.tudelft.nl/tvargiemezis/"><img class="img-fluid rounded-circle w-50 h-70" src="/courses/geo5021/img/Themis.jpeg" alt="Themistokles Vargiemezis photo" /></a>
+			<h4>Themistokles Vargiemezis<br /></h4>
+			<p>
+			  tvargiemezis&#35;8017 | <a href="https://3d.bk.tudelft.nl/tvargiemezis/"><i class="fas fa-home"></i></a> 
+			  |
+			  <a href="mailto:tvargiemezis@tudelft.nl"><i class="fas fa-envelope"></i></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<h2 id="marking">Marking</h2>
+
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <td>Assignment 1</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>Assignment 2</td>
+      <td>75%</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>a minimum of 50% in each assignment <strong>and</strong> a total mark of 57.5% (which rounds up to 6) are both necessary to pass the course;</li>
+  <li>there is one resit exam on the 3rd week of November;</li>
+  <li>there is one resit for each homework;</li>
+  <li>if the student still fails after the resits, then the student has to redo the whole course (including assignments) the following year.</li>
+</ul>
+
+	    </div>
+		</div>
+    <footer class="footer">
+	<div class="container">
+		<hr>
+		<p class="text-center muted credit"><small>
+			The teaching materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i> Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence.
+		</small></p>
+	</div>
+</footer>
+<script src="/courses/geo5021/js/jquery.min.js"></script>
+<script src="/courses/geo5021/js/popper.min.js"></script>
+<script src="/courses/geo5021/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

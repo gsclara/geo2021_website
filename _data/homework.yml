@@ -1,0 +1,25 @@
+- number: 0
+  title: "Basic setup and knowledge for the course"
+  # deadline: 2023-03-04T13:45
+  publish: true
+  value: 0
+
+- number: 1
+  title: "Fix our messed up case"
+  deadline: 2026-09-25T17:00
+  publish: true
+  group: "This is an individual assignment."
+  value: 25
+
+- number: 2
+  title: "Analyze wind and dispersion flows around TUDelft campus"
+  group: "You're allowed for this assignment to work in a __group of 2__ (and thus submit only one solution for all of you). If you prefer to work alone, it's also fine."
+  deadline: 2026-11-02T17:00
+  publish: true
+  value: 75
+
+- number: resit
+  title: "Resit individual or group assigment"
+  deadline: 2026-11-27T17:00
+  group: "This is an individual or group assignment."
+  publish: true

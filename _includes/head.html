@@ -1,0 +1,49 @@
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title>{% if page.title -%}
+    {{ page.title -}}
+  {%- else -%}
+    {% for hw in site.data.homework -%}
+      {% if hw.number == page.assignment -%}
+        {{ hw.title -}}
+      {%- endif -%}
+    {%- endfor %}
+  {%- endif %} | {{ site.title }}</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>

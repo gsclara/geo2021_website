@@ -1,0 +1,62 @@
+- lesson: intro
+  title: "Introduction to Computational Fluid Dynamics"
+  live: <i class="fas fa-chalkboard-teacher"></i> course and homework 0 intro
+  who: "Clara"
+  publish: true
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class1_GEO5015.pdf'>Introduction to Computational Fluid Dynamics</a>"
+
+- lesson: ABL
+  title: "An introduction to the atmospheric boundary layer"
+  who: "Clara"
+  live: <i class="fas fa-chalkboard-teacher"></i> Winds
+  videos: 
+    - https://www.youtube.com/watch?v=PDEcAxfSYaI
+  publish: true
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class2_GEO5015.pdf'>An introduction to the atmospheric boundary layer</a>"
+
+- lesson: maths
+  title: "Some mathematical and conceptual tools"
+  who: "Themis"
+  publish: true
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class3_GEO5015.pdf'>Some mathematical and conceptual tools</a>"
+  publish: true
+
+- lesson: urbanCFD
+  title: "Computational Fluid Dynamics applied to urban cases"
+  who: "Clara"
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class4_GEO5015.pdf'>Computational Fluid Dynamics applied to urban cases</a>"
+  publish: true
+
+- lesson: equations
+  title: "Governing equations for turbulent flow"
+  who: "Clara"
+  toread:
+    - " <i class='fa fa-download'></i> <a href='../../data/Class5_GEO5015.pdf'>Governing equations for turbulent flow</a>"
+  publish: true
+
+- lesson: tke
+  title: "Turbulent kinetic energy & stability"
+  who: "Clara"
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class6_GEO5015.pdf'>Turbulent kinetic energy & stability</a>"
+  publish: true
+
+- lesson: turbulence
+  title: " The turbulence closure problem"
+  who: "Clara"
+  toread:
+    - "<i class='fa fa-download'></i> <a href='../../data/Class7_GEO5015.pdf'>The turbulence closure problem</a>"
+  publish: true
+
+- lesson: support
+  title: "Support for assigments"
+  who: "Clara/Themis"
+  publish: true
+  toread:
+    - "This sessions are for support of the assignment, please come to class to work together with your team and submit the assignment on time."
+
+

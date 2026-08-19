@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<h4>Assignment {{ page.assignment }}</h4>
+{% for hw in site.data.homework %}
+	{% if hw.number == page.assignment %}
+		<h2>{{ hw.title }}</h2>
+		{% if hw.publish == true %}
+			{% if hw.value > 0 %}
+				<p>Deadline is <strong>{{ hw.deadline | date: "%d %B %Y at %I:%M %P" }}</strong></p>
+				<p>Late submission? 10% will be removed for each day that you are late.</p>
+				<p>{{ hw.group | markdownify }}</p>
+				<p>The assignment is worth {{ hw.value }}% of your final mark.</p>
+			{% else %}
+				<p>This is a preparation assigment. It is unmarked and has no deadline, but it will help you to do the following assignments.</p>
+			{% endif %}
+			{{ content }}
+		{% else %}
+			<mybox>
+				<i class="fa fa-exclamation-circle"></i> material not online yet
+			</mybox>
+		{% endif %}
+	{% endif %}
+{% endfor %}

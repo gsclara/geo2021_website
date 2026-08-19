@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title> | GEO5021</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
+	<div class="container">
+		<a class="navbar-brand" href="https://3d.bk.tudelft.nl"><img class="tud-logo" src="/courses/geo5021/img/3dgeoinfo.png" /></a>
+		<a class="navbar-brand" href="/courses/geo5021/">GEO5021</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<ul class="navbar-nav me-auto">
+	  		
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/about/">about</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/news/">news</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/les/">lessons</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/hw/">homework</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="https://discord.gg/VKeSqYS6v">discord</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/">etc</a>
+							
+						</li>
+	  			
+			
+	  	</ul>
+	  	<ul class="navbar-nav">
+	  		<li class="nav-item">
+	  			<button class="nav-link" onclick="toggleTheme()" title="Toggle dark mode" style="background:none;border:none">
+	  				<i id="theme-icon" class="fas fa-moon"></i>
+	  			</button>
+	  		</li>
+	  	</ul>
+	  </div>
+	</div>
+</nav>
+
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    <h4>Assignment 3</h4>
+
+	
+
+	
+
+	
+
+	
+
+
+	    </div>
+		</div>
+    <footer class="footer">
+	<div class="container">
+		<hr>
+		<p class="text-center muted credit"><small>
+			The teaching materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i> Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence.
+		</small></p>
+	</div>
+</footer>
+<script src="/courses/geo5021/js/jquery.min.js"></script>
+<script src="/courses/geo5021/js/popper.min.js"></script>
+<script src="/courses/geo5021/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

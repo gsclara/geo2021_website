@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('geo1004-theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+    function setThemeIcon(theme) {
+      var icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('geo1004-theme', next);
+      setThemeIcon(next);
+    }
+  </script>
+  <title>Basic setup and knowledge for the course | GEO5021</title>
+  <meta name="description" content="GEO1004: 3D modelling of the built environment">
+  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ken Arroyo Ohori">
+  <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="/courses/geo5021/css/geo1004.css" rel="stylesheet">
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
+	<div class="container">
+		<a class="navbar-brand" href="https://3d.bk.tudelft.nl"><img class="tud-logo" src="/courses/geo5021/img/3dgeoinfo.png" /></a>
+		<a class="navbar-brand" href="/courses/geo5021/">GEO5021</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<ul class="navbar-nav me-auto">
+	  		
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/about/">about</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/news/">news</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/les/">lessons</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/hw/">homework</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="https://discord.gg/VKeSqYS6v">discord</a>
+							
+						</li>
+	  			
+			
+					
+	  			
+						<li class="nav-item">
+							
+								<a class="nav-link" href="/courses/geo5021/">etc</a>
+							
+						</li>
+	  			
+			
+	  	</ul>
+	  	<ul class="navbar-nav">
+	  		<li class="nav-item">
+	  			<button class="nav-link" onclick="toggleTheme()" title="Toggle dark mode" style="background:none;border:none">
+	  				<i id="theme-icon" class="fas fa-moon"></i>
+	  			</button>
+	  		</li>
+	  	</ul>
+	  </div>
+	</div>
+</nav>
+
+    <div id="wrap">
+			<div id="main" class="container clear-top">
+				<br />
+		    <h4>Assignment 0</h4>
+
+	
+		<h2>Basic setup and knowledge for the course</h2>
+		
+			
+				<p>This is a preparation assigment. It is unmarked and has no deadline, but it will help you to do the following assignments.</p>
+			
+			<p>The instructions in this assignment will help you to have a working system to compile C++ files with CGAL and other external libraries. You don’t need to do this assignment, but it will avoid you problems later on.</p>
+
+<hr />
+<ul id="markdown-toc">
+  <li><a href="#1-how-to-install-a-nice-c-development-environment" id="markdown-toc-1-how-to-install-a-nice-c-development-environment">1. How to install a nice C++ development environment</a></li>
+  <li><a href="#2-test-and-understand-your-c-development-environment" id="markdown-toc-2-test-and-understand-your-c-development-environment">2. Test and understand your C++ development environment</a></li>
+  <li><a href="#3-installing-cgal-and-other-c-libraries" id="markdown-toc-3-installing-cgal-and-other-c-libraries">3. Installing CGAL and other C++ libraries</a>    <ul>
+      <li><a href="#31-windows" id="markdown-toc-31-windows">3.1. Windows</a></li>
+      <li><a href="#32-mac" id="markdown-toc-32-mac">3.2. Mac</a></li>
+      <li><a href="#33-linux" id="markdown-toc-33-linux">3.3. Linux</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-how-to-use-c-libraries" id="markdown-toc-4-how-to-use-c-libraries">4. How to use C++ libraries?</a></li>
+  <li><a href="#5-testing-your-c-with-cgal-installation" id="markdown-toc-5-testing-your-c-with-cgal-installation">5. Testing your C++ with CGAL installation</a></li>
+  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
+</ul>
+<hr />
+
+<h3 id="1-how-to-install-a-nice-c-development-environment">1. How to install a nice C++ development environment</h3>
+
+<p>There are two or three parts to this:</p>
+
+<ol>
+  <li>a C++ compiler, which you absolutely need and is what converts your C++ source code to an executable file that you can run;</li>
+  <li>an integrated development environment (IDE), which is highly recommended and provides you with a nice text editor for C++ source code and other programming tools, such as debuggers (to find bugs in your code) and profiling tools (to find what makes it slow); and</li>
+  <li><a href="https://cmake.org">CMake</a> as a build system, which is also highly recommended and is a layer between the two parts above.</li>
+</ol>
+
+<p>Our recommendation is that you install <a href="https://www.jetbrains.com/clion/">CLion</a>, <a href="https://tudelft3d.github.io/geogeeks/cpp/cmake/">CMake</a> and <a href="https://tudelft3d.github.io/geogeeks/cpp/install/">a C++ compiler</a> using the instructions from <a href="https://tudelft3d.github.io/geogeeks/">geogeeks</a>.</p>
+
+<p>If the above tools don’t work well for you or you want some IDE alternatives, <a href="https://visualstudio.microsoft.com/">Visual Studio</a> is the most popular full featured IDE on Windows, <a href="https://developer.apple.com/xcode/">Xcode</a> is the one on Mac and <a href="https://code.visualstudio.com/">Visual Studio Code</a> is a nice simpler alternative that runs on Windows, Mac and Linux. Note that Visual Studio and Xcode have their own build systems that do not rely on CMake.</p>
+
+<h3 id="2-test-and-understand-your-c-development-environment">2. Test and understand your C++ development environment</h3>
+
+<p>After you have installed the tools listed above, you should test your C++ development environment and make sure that it is working correctly.</p>
+
+<p>If you use the recommended tools (CLion, CMake and a C++ compiler), try step 1 of <a href="https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html#new-project">this CLion tutorial</a>. Make sure that your default C++ project builds and runs correctly. If you use a different (no CLion) setup, try creating a C++ project, building it and running it.</p>
+
+<p>By now, you should have two important files in your project: a C++ source code file with a <code class="language-plaintext highlighter-rouge">.cpp</code> extension and a CMake configuration file named <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>.</p>
+
+<p>First, have a look at the <code class="language-plaintext highlighter-rouge">.cpp</code> file, which will contain some sample C++ code as an example. If you’re using a recent version of CLion, the <code class="language-plaintext highlighter-rouge">.cpp</code> file will also contain some comments (in green) that teach you how to use certain features of CLion. Note that these comments are regular lines of code, which you can see if you click on the pencil icon (Toggle Rendered View).</p>
+
+<p>Then, try to understand what is happenning in the <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> using <a href="https://tudelft3d.github.io/geogeeks/cpp/cmake/#making-sense-of-your-cmakeliststxt-file">this page</a> of geogeeks. Also, read <a href="https://cplusplus.com/doc/tutorial/introduction/">this page</a> to understand what your compiler is doing when you tell it to build your project.</p>
+
+<p>If you don’t know C++ or need a refresher, <a href="https://www.cplusplus.com/doc/tutorial/">this</a> is a good series of tutorials. Skim the tutorials in the section titled Basics of C++ and the ones on <a href="https://cplusplus.com/doc/tutorial/control/">Control Structures</a>, <a href="https://cplusplus.com/doc/tutorial/functions/">Functions</a> and <a href="https://cplusplus.com/doc/tutorial/files/">Input/output with files</a>. You don’t need to memorise every single C++ feature in them, but knowing what’s available will help you know what to look for in the future. Test and modify some of the examples in your own computer.</p>
+
+<p>The same website is also a very good user friendly reference for the C++ standard library data structures, functions and algorithms. For example, if you want to know the member functions of a <a href="https://www.cplusplus.com/reference/list/list/"><code class="language-plaintext highlighter-rouge">list</code></a> or a <a href="https://www.cplusplus.com/reference/map/map/"><code class="language-plaintext highlighter-rouge">map</code></a>.</p>
+
+<h3 id="3-installing-cgal-and-other-c-libraries">3. Installing CGAL and other C++ libraries</h3>
+
+<p>Your C++ development environment already comes with the C++ standard library, which contains a lot of functionality. However, there’s much, much more that is available in external libraries, which you have to install.</p>
+
+<p>During the course, we will use <a href="https://www.cgal.org/">CGAL</a>, which is a very nice computational geometry library with a lot of features. Unfortunately, it is also a relatively complex library to install and use, so installing it now will help you to get it working already and to understand the process of installing libraries more generally.</p>
+
+<p>The simplest way to install CGAL (and similar libraries) depends on your operating system. See the sections below.</p>
+
+<h5 id="31-windows">3.1. Windows</h5>
+
+<p>In our opinion, there are three good ways to install CGAL. Each have their pros and cons. These are:</p>
+
+<ol>
+  <li>
+    <p>using <code class="language-plaintext highlighter-rouge">vcpkg</code>, Microsoft’s package manager for C++ libraries;</p>
+  </li>
+  <li>
+    <p>through the <a href="https://docs.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL)</a>, which is a feature of Windows that allows you to run a Linux environment inside Windows 10 or later; or</p>
+  </li>
+  <li>
+    <p>using <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a>, which is a cross-platform package manager built on conda.</p>
+  </li>
+</ol>
+
+<p><strong><code class="language-plaintext highlighter-rouge">vcpkg</code> advantages</strong>: If you choose to use <code class="language-plaintext highlighter-rouge">vcpkg</code>, you’ll use less disk space on your computer (several GBs), use less memory because you won’t need to run a Linux environment at the same time, generally achieve higher performance, and avoid dealing with two different filesystems (Windows and Linux). <code class="language-plaintext highlighter-rouge">vcpkg</code> is also what you should use if you want to use Visual Studio instead of CLion.</p>
+
+<p><strong>WSL advantages</strong> If you choose to use WSL, you’ll have access to the easier and less error-prone install processes of CGAL (and other libraries) that are available under Linux, be able to use other nice tools that work better on Linux (e.g. SSH or git clients), generally have access to better support/answers from internet communities, and gain valuable (work) experience using Linux. Also, If you want to take GEO5015: Modelling wind and dispersion in urban environments, you’ll most likely use WSL anyway.</p>
+
+<p><strong>pixi advantages</strong> Pixi puts its own versions of libraries within every project, which can avoid you a lot of issues with broken and/or incompatible versions.</p>
+
+<p>For what is worth, we used to recommend the WSL route in previous years, but now <code class="language-plaintext highlighter-rouge">vcpkg</code> is very good as well and CLion has added <code class="language-plaintext highlighter-rouge">vcpkg</code> integration. Pixi seems good but we haven’t tested extensively yet.</p>
+
+<p>If you want to go the WSL route, <a href="https://tudelft3d.github.io/geogeeks/linux/wsl/">install it</a> if you don’t have it already. If you already have it but have WSL 1, you should really <a href="https://learn.microsoft.com/en-us/windows/wsl/install">upgrade to WSL 2</a>. Similarly, if you have it but have an old distribution of Linux, we advice that you <a href="https://askubuntu.com/questions/1428423/upgrade-ubuntu-in-wsl2-from-20-04-to-22-04">upgrade</a> to something relatively recent like Ubuntu-24.04 LTS (or 26.04 LTS when available). Then, follow <a href="https://tudelft3d.github.io/geogeeks/cpp/wslclion/">this tutorial</a>. You can skip the GDAL installation, but you should do all of the rest, including the Connect to CLion section.</p>
+
+<p>If you want to go the <code class="language-plaintext highlighter-rouge">vcpkg</code> route, have a look at <a href="https://tudelft3d.github.io/geogeeks/cpp/vcpkgwindows/">this tutorial</a> to install <code class="language-plaintext highlighter-rouge">vcpkg</code> and CGAL. <a href="cgal_vcpkg_install_manual.pdf">Here</a> is a more detailed tutorial that explains how to link it to CLion step by step.</p>
+
+<p>If you want to go the <code class="language-plaintext highlighter-rouge">pixi</code> route, have a look at the docs for the <a href="https://pixi.prefix.dev/latest/installation/">installation</a>, <a href="https://pixi.prefix.dev/latest/first_workspace/">first workspace</a> and <a href="https://pixi.prefix.dev/latest/getting_started/">basic usage</a>. You’ll have to modify the <code class="language-plaintext highlighter-rouge">pixi.toml</code> in your project root to add CGAL and other dependencies like <a href="https://github.com/tudelft3d/val3dity/blob/pixi/pixi.toml">this</a>.</p>
+
+<h5 id="32-mac">3.2. Mac</h5>
+
+<p>The easiest way is to use <a href="https://brew.sh">Homebrew</a> (recommended), although it’s quite easy to use an alternative like <a href="https://www.macports.org">MacPorts</a>, to use <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a> (see the Windows instructions above), or to install them manually (follow the Linux or Unix instructions if there are none for Mac).</p>
+
+<p>Once you have installed Homebrew, you can install CGAL by doing:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install cgal
+</code></pre></div></div>
+
+<p>Note that if you’re using an Apple Silicon (arm64) Mac, the paths used by Homebrew are: <code class="language-plaintext highlighter-rouge">/opt/homebrew/include</code> (for headers) and <code class="language-plaintext highlighter-rouge">/opt/homebrew/lib</code> (for libraries). If you’re using an older Intel (x86-64) Mac, the paths used by Homebrew are: <code class="language-plaintext highlighter-rouge">/usr/local/include</code> (for headers) and <code class="language-plaintext highlighter-rouge">/usr/local/lib</code> (for libraries). If you’re using CLion, these should be found automatically by CMake. However, if you’re using Xcode you will have to put these manually in your project settings.</p>
+
+<h5 id="33-linux">3.3. Linux</h5>
+
+<p>Use the package manager of your distribution (eg <code class="language-plaintext highlighter-rouge">apt</code> in Ubuntu/Debian), use <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a> (see the Windows instructions above), or install them manually.</p>
+
+<p>An example to install CGAL with <code class="language-plaintext highlighter-rouge">apt</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install libcgal-dev
+</code></pre></div></div>
+
+<p>Note that you should get the developer versions of C++ libraries (<code class="language-plaintext highlighter-rouge">-dev</code>), since these will have all the files you need to develop code, not only to run it. Also note that if you have an old distribution, you’ll likely also get an old CGAL version through your package manager.</p>
+
+<h3 id="4-how-to-use-c-libraries">4. How to use C++ libraries?</h3>
+
+<p>Anything in the C++ standard library will work after including a header in your C++ source code files. For example, if you want to use <a href="https://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/"><code class="language-plaintext highlighter-rouge">std::cout</code> and its <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> operator</a>, you need include <code class="language-plaintext highlighter-rouge">iostream</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt; 
+</code></pre></div></div>
+
+<p>However, if you need to use an external library (eg CGAL), you will first need to configure some things for it to compile and link correctly. In IDEs (like Visual Studio or Xcode), this is usually done in the GUI. If you use CMake, this is typically done in your <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> file by first calling a script that finds the library. An example using CGAL:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find_package( CGAL REQUIRED )
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">REQUIRED</code> keyword makes CMake generate an error if CGAL is not found. This is good because knowing that something is broken with CGAL is much better than getting a cryptic error later on!</p>
+
+<p>Then, you will also need to add a few lines in your CMakeLists that link your project with the CGAL library:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add_executable( your_project_name your_source_file.cpp )
+target_link_libraries( your_project_name CGAL::CGAL )
+</code></pre></div></div>
+
+<p>After those steps, adding the required headers in your <code class="language-plaintext highlighter-rouge">.cpp</code> file will work. For example, try adding this header to your <code class="language-plaintext highlighter-rouge">.cpp</code> file, building and running your project:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;CGAL/Exact_predicates_inexact_constructions_kernel.h&gt;
+</code></pre></div></div>
+
+<p>Note that if you use certain (more advanced) parts of CGAL, you will need to add more instructions to your <code class="language-plaintext highlighter-rouge">find_package</code> and <code class="language-plaintext highlighter-rouge">target_link_libraries</code> lines. There are some examples <a href="https://doc.cgal.org/latest/Manual/devman_create_and_use_a_cmakelist.html">here</a>.</p>
+
+<h3 id="5-testing-your-c-with-cgal-installation">5. Testing your C++ with CGAL installation</h3>
+
+<p>In order to make sure that everything is working correctly, you should also test your C++ setup together with CGAL.</p>
+
+<p>We recommend that you do this in two steps. First, try one of the simpler CGAL library examples with no external dependencies, like <a href="https://doc.cgal.org/latest/Polygon/index.html#title3">this one</a>.</p>
+
+<p>Then, try a more complex example with external dependencies, such as <a href="https://doc.cgal.org/latest/Polygon/index.html#title8">this one</a>, which requires Qt6. For that particular example, you will need to add more things to your CMakeLists file. See <a href="https://doc.cgal.org/latest/Manual/devman_create_and_use_a_cmakelist.html">here</a>.</p>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+
+<p>The student assistants of different years have helped us a lot to figure out the best way to install things in different environments. In particular, Özge Tufan contributed most of the WSL instructions and Dimitris Mantas documented the method to use <code class="language-plaintext highlighter-rouge">vcpkg</code> with CLion.</p>
+
+<!-- ### Likely useful software for the course
+
+  - [QGIS](https://qgis.org/): it has a rudimentary 3D viewer that could be useful and all of GDAL is available
+  - [GDAL utilities](https://gdal.org/programs/index.html): to process rasters (included with QGIS)
+  - [CloudCompare](http://cloudcompare.org/): to view/edit/process point clouds
+  - [Blender](https://www.blender.org/) and [BlenderGIS](https://github.com/domlysz/BlenderGIS): to view 3D models and render them beautifully -->
+
+<p>[last updated: 2026-04-21 16:08]</p>
+
+		
+	
+
+	
+
+	
+
+	
+
+
+	    </div>
+		</div>
+    <footer class="footer">
+	<div class="container">
+		<hr>
+		<p class="text-center muted credit"><small>
+			The teaching materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i> Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence.
+		</small></p>
+	</div>
+</footer>
+<script src="/courses/geo5021/js/jquery.min.js"></script>
+<script src="/courses/geo5021/js/popper.min.js"></script>
+<script src="/courses/geo5021/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

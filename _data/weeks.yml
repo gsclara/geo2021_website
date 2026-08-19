@@ -1,0 +1,80 @@
+- week: 1
+  todos: "read <a href='about/'>about</a> page"
+  lesson1: intro
+  lesson2: ABL
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+  start: hw_0
+
+- week: 2
+  start: hw_1
+  lesson1: ABL
+  lesson2: maths
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 3
+  continue: hw_1
+  lesson1: urbanCFD
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 4
+  continue: hw_1
+  lesson1: equations
+  room1: A+BE Hall P
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 5
+  submit: hw_1
+  start: hw_2
+  lesson1: tke
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 6
+  continue: hw_2
+  lesson1: turbulence 
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 7
+  continue: hw_2
+  lesson1: support
+  lesson2: support
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 8
+  continue: hw_2
+  lesson1: support
+  lesson2: support
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 9
+  continue: hw_2
+  lesson1: support
+  lesson2: support
+  help: true
+  room1: A+BE Hall Z
+  room2: A+BE Hall Z
+  roomhelp: A+BE Geolab
+
+- week: 10
+  submit: hw_2
