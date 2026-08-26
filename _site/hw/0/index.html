@@ -130,163 +130,195 @@
 			
 				<p>This is a preparation assigment. It is unmarked and has no deadline, but it will help you to do the following assignments.</p>
 			
-			<p>The instructions in this assignment will help you to have a working system to compile C++ files with CGAL and other external libraries. You don’t need to do this assignment, but it will avoid you problems later on.</p>
+			<p>The instructions in this assignment will help you get started with linux, connecting to our server, foote, and intalling and using paraView, which will be necessary for postprocessing.</p>
 
 <hr />
 <ul id="markdown-toc">
-  <li><a href="#1-how-to-install-a-nice-c-development-environment" id="markdown-toc-1-how-to-install-a-nice-c-development-environment">1. How to install a nice C++ development environment</a></li>
-  <li><a href="#2-test-and-understand-your-c-development-environment" id="markdown-toc-2-test-and-understand-your-c-development-environment">2. Test and understand your C++ development environment</a></li>
-  <li><a href="#3-installing-cgal-and-other-c-libraries" id="markdown-toc-3-installing-cgal-and-other-c-libraries">3. Installing CGAL and other C++ libraries</a>    <ul>
-      <li><a href="#31-windows" id="markdown-toc-31-windows">3.1. Windows</a></li>
-      <li><a href="#32-mac" id="markdown-toc-32-mac">3.2. Mac</a></li>
-      <li><a href="#33-linux" id="markdown-toc-33-linux">3.3. Linux</a></li>
+  <li><a href="#1-how-to-use-linux-systems" id="markdown-toc-1-how-to-use-linux-systems">1. How to use linux systems</a></li>
+  <li><a href="#2-getting-comfortable-with-vi-or-nano" id="markdown-toc-2-getting-comfortable-with-vi-or-nano">2. Getting comfortable with vi or nano:</a></li>
+  <li><a href="#3-connecting-to-our-server-foote" id="markdown-toc-3-connecting-to-our-server-foote">3. Connecting to our server, foote</a>    <ul>
+      <li><a href="#best-practices" id="markdown-toc-best-practices">Best practices</a></li>
+      <li><a href="#setting-up-your-config-file" id="markdown-toc-setting-up-your-config-file">Setting up your config file</a></li>
+      <li><a href="#how-to-connect-to-the-server" id="markdown-toc-how-to-connect-to-the-server">How to connect to the server</a></li>
     </ul>
   </li>
-  <li><a href="#4-how-to-use-c-libraries" id="markdown-toc-4-how-to-use-c-libraries">4. How to use C++ libraries?</a></li>
-  <li><a href="#5-testing-your-c-with-cgal-installation" id="markdown-toc-5-testing-your-c-with-cgal-installation">5. Testing your C++ with CGAL installation</a></li>
-  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
+  <li><a href="#4-installing-and-using-paraview" id="markdown-toc-4-installing-and-using-paraview">4. Installing and using paraView</a></li>
+  <li><a href="#5-openfoam-use" id="markdown-toc-5-openfoam-use">5. OpenFOAM use</a>    <ul>
+      <li><a href="#most-common-comands-used-when-running-openfoam" id="markdown-toc-most-common-comands-used-when-running-openfoam">Most common comands used when running OpenFOAM:</a></li>
+    </ul>
+  </li>
 </ul>
 <hr />
 
-<h3 id="1-how-to-install-a-nice-c-development-environment">1. How to install a nice C++ development environment</h3>
+<h2 id="1-how-to-use-linux-systems">1. How to use linux systems</h2>
 
-<p>There are two or three parts to this:</p>
+<p>This assignment is supposed to be done after our introduction to Linux, which was done in geo1002 some time ago. 
+For a refresher here you can find more <a href="https://tudelft3d.github.io/geogeeks/linux/">information</a></p>
 
-<ol>
-  <li>a C++ compiler, which you absolutely need and is what converts your C++ source code to an executable file that you can run;</li>
-  <li>an integrated development environment (IDE), which is highly recommended and provides you with a nice text editor for C++ source code and other programming tools, such as debuggers (to find bugs in your code) and profiling tools (to find what makes it slow); and</li>
-  <li><a href="https://cmake.org">CMake</a> as a build system, which is also highly recommended and is a layer between the two parts above.</li>
-</ol>
+<p>Most common commands in linux during this course:</p>
 
-<p>Our recommendation is that you install <a href="https://www.jetbrains.com/clion/">CLion</a>, <a href="https://tudelft3d.github.io/geogeeks/cpp/cmake/">CMake</a> and <a href="https://tudelft3d.github.io/geogeeks/cpp/install/">a C++ compiler</a> using the instructions from <a href="https://tudelft3d.github.io/geogeeks/">geogeeks</a>.</p>
-
-<p>If the above tools don’t work well for you or you want some IDE alternatives, <a href="https://visualstudio.microsoft.com/">Visual Studio</a> is the most popular full featured IDE on Windows, <a href="https://developer.apple.com/xcode/">Xcode</a> is the one on Mac and <a href="https://code.visualstudio.com/">Visual Studio Code</a> is a nice simpler alternative that runs on Windows, Mac and Linux. Note that Visual Studio and Xcode have their own build systems that do not rely on CMake.</p>
-
-<h3 id="2-test-and-understand-your-c-development-environment">2. Test and understand your C++ development environment</h3>
-
-<p>After you have installed the tools listed above, you should test your C++ development environment and make sure that it is working correctly.</p>
-
-<p>If you use the recommended tools (CLion, CMake and a C++ compiler), try step 1 of <a href="https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html#new-project">this CLion tutorial</a>. Make sure that your default C++ project builds and runs correctly. If you use a different (no CLion) setup, try creating a C++ project, building it and running it.</p>
-
-<p>By now, you should have two important files in your project: a C++ source code file with a <code class="language-plaintext highlighter-rouge">.cpp</code> extension and a CMake configuration file named <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>.</p>
-
-<p>First, have a look at the <code class="language-plaintext highlighter-rouge">.cpp</code> file, which will contain some sample C++ code as an example. If you’re using a recent version of CLion, the <code class="language-plaintext highlighter-rouge">.cpp</code> file will also contain some comments (in green) that teach you how to use certain features of CLion. Note that these comments are regular lines of code, which you can see if you click on the pencil icon (Toggle Rendered View).</p>
-
-<p>Then, try to understand what is happenning in the <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> using <a href="https://tudelft3d.github.io/geogeeks/cpp/cmake/#making-sense-of-your-cmakeliststxt-file">this page</a> of geogeeks. Also, read <a href="https://cplusplus.com/doc/tutorial/introduction/">this page</a> to understand what your compiler is doing when you tell it to build your project.</p>
-
-<p>If you don’t know C++ or need a refresher, <a href="https://www.cplusplus.com/doc/tutorial/">this</a> is a good series of tutorials. Skim the tutorials in the section titled Basics of C++ and the ones on <a href="https://cplusplus.com/doc/tutorial/control/">Control Structures</a>, <a href="https://cplusplus.com/doc/tutorial/functions/">Functions</a> and <a href="https://cplusplus.com/doc/tutorial/files/">Input/output with files</a>. You don’t need to memorise every single C++ feature in them, but knowing what’s available will help you know what to look for in the future. Test and modify some of the examples in your own computer.</p>
-
-<p>The same website is also a very good user friendly reference for the C++ standard library data structures, functions and algorithms. For example, if you want to know the member functions of a <a href="https://www.cplusplus.com/reference/list/list/"><code class="language-plaintext highlighter-rouge">list</code></a> or a <a href="https://www.cplusplus.com/reference/map/map/"><code class="language-plaintext highlighter-rouge">map</code></a>.</p>
-
-<h3 id="3-installing-cgal-and-other-c-libraries">3. Installing CGAL and other C++ libraries</h3>
-
-<p>Your C++ development environment already comes with the C++ standard library, which contains a lot of functionality. However, there’s much, much more that is available in external libraries, which you have to install.</p>
-
-<p>During the course, we will use <a href="https://www.cgal.org/">CGAL</a>, which is a very nice computational geometry library with a lot of features. Unfortunately, it is also a relatively complex library to install and use, so installing it now will help you to get it working already and to understand the process of installing libraries more generally.</p>
-
-<p>The simplest way to install CGAL (and similar libraries) depends on your operating system. See the sections below.</p>
-
-<h5 id="31-windows">3.1. Windows</h5>
-
-<p>In our opinion, there are three good ways to install CGAL. Each have their pros and cons. These are:</p>
-
-<ol>
-  <li>
-    <p>using <code class="language-plaintext highlighter-rouge">vcpkg</code>, Microsoft’s package manager for C++ libraries;</p>
-  </li>
-  <li>
-    <p>through the <a href="https://docs.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL)</a>, which is a feature of Windows that allows you to run a Linux environment inside Windows 10 or later; or</p>
-  </li>
-  <li>
-    <p>using <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a>, which is a cross-platform package manager built on conda.</p>
-  </li>
-</ol>
-
-<p><strong><code class="language-plaintext highlighter-rouge">vcpkg</code> advantages</strong>: If you choose to use <code class="language-plaintext highlighter-rouge">vcpkg</code>, you’ll use less disk space on your computer (several GBs), use less memory because you won’t need to run a Linux environment at the same time, generally achieve higher performance, and avoid dealing with two different filesystems (Windows and Linux). <code class="language-plaintext highlighter-rouge">vcpkg</code> is also what you should use if you want to use Visual Studio instead of CLion.</p>
-
-<p><strong>WSL advantages</strong> If you choose to use WSL, you’ll have access to the easier and less error-prone install processes of CGAL (and other libraries) that are available under Linux, be able to use other nice tools that work better on Linux (e.g. SSH or git clients), generally have access to better support/answers from internet communities, and gain valuable (work) experience using Linux. Also, If you want to take GEO5015: Modelling wind and dispersion in urban environments, you’ll most likely use WSL anyway.</p>
-
-<p><strong>pixi advantages</strong> Pixi puts its own versions of libraries within every project, which can avoid you a lot of issues with broken and/or incompatible versions.</p>
-
-<p>For what is worth, we used to recommend the WSL route in previous years, but now <code class="language-plaintext highlighter-rouge">vcpkg</code> is very good as well and CLion has added <code class="language-plaintext highlighter-rouge">vcpkg</code> integration. Pixi seems good but we haven’t tested extensively yet.</p>
-
-<p>If you want to go the WSL route, <a href="https://tudelft3d.github.io/geogeeks/linux/wsl/">install it</a> if you don’t have it already. If you already have it but have WSL 1, you should really <a href="https://learn.microsoft.com/en-us/windows/wsl/install">upgrade to WSL 2</a>. Similarly, if you have it but have an old distribution of Linux, we advice that you <a href="https://askubuntu.com/questions/1428423/upgrade-ubuntu-in-wsl2-from-20-04-to-22-04">upgrade</a> to something relatively recent like Ubuntu-24.04 LTS (or 26.04 LTS when available). Then, follow <a href="https://tudelft3d.github.io/geogeeks/cpp/wslclion/">this tutorial</a>. You can skip the GDAL installation, but you should do all of the rest, including the Connect to CLion section.</p>
-
-<p>If you want to go the <code class="language-plaintext highlighter-rouge">vcpkg</code> route, have a look at <a href="https://tudelft3d.github.io/geogeeks/cpp/vcpkgwindows/">this tutorial</a> to install <code class="language-plaintext highlighter-rouge">vcpkg</code> and CGAL. <a href="cgal_vcpkg_install_manual.pdf">Here</a> is a more detailed tutorial that explains how to link it to CLion step by step.</p>
-
-<p>If you want to go the <code class="language-plaintext highlighter-rouge">pixi</code> route, have a look at the docs for the <a href="https://pixi.prefix.dev/latest/installation/">installation</a>, <a href="https://pixi.prefix.dev/latest/first_workspace/">first workspace</a> and <a href="https://pixi.prefix.dev/latest/getting_started/">basic usage</a>. You’ll have to modify the <code class="language-plaintext highlighter-rouge">pixi.toml</code> in your project root to add CGAL and other dependencies like <a href="https://github.com/tudelft3d/val3dity/blob/pixi/pixi.toml">this</a>.</p>
-
-<h5 id="32-mac">3.2. Mac</h5>
-
-<p>The easiest way is to use <a href="https://brew.sh">Homebrew</a> (recommended), although it’s quite easy to use an alternative like <a href="https://www.macports.org">MacPorts</a>, to use <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a> (see the Windows instructions above), or to install them manually (follow the Linux or Unix instructions if there are none for Mac).</p>
-
-<p>Once you have installed Homebrew, you can install CGAL by doing:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install cgal
+<p>Copy folder to a determined location:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   cp -r nameFolder /path/to/location
 </code></pre></div></div>
 
-<p>Note that if you’re using an Apple Silicon (arm64) Mac, the paths used by Homebrew are: <code class="language-plaintext highlighter-rouge">/opt/homebrew/include</code> (for headers) and <code class="language-plaintext highlighter-rouge">/opt/homebrew/lib</code> (for libraries). If you’re using an older Intel (x86-64) Mac, the paths used by Homebrew are: <code class="language-plaintext highlighter-rouge">/usr/local/include</code> (for headers) and <code class="language-plaintext highlighter-rouge">/usr/local/lib</code> (for libraries). If you’re using CLion, these should be found automatically by CMake. However, if you’re using Xcode you will have to put these manually in your project settings.</p>
-
-<h5 id="33-linux">3.3. Linux</h5>
-
-<p>Use the package manager of your distribution (eg <code class="language-plaintext highlighter-rouge">apt</code> in Ubuntu/Debian), use <a href="https://pixi.prefix.dev/latest/"><code class="language-plaintext highlighter-rouge">pixi</code></a> (see the Windows instructions above), or install them manually.</p>
-
-<p>An example to install CGAL with <code class="language-plaintext highlighter-rouge">apt</code>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install libcgal-dev
+<p>Copy file to a determined location:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   cp nameFile /path/to/location
 </code></pre></div></div>
 
-<p>Note that you should get the developer versions of C++ libraries (<code class="language-plaintext highlighter-rouge">-dev</code>), since these will have all the files you need to develop code, not only to run it. Also note that if you have an old distribution, you’ll likely also get an old CGAL version through your package manager.</p>
-
-<h3 id="4-how-to-use-c-libraries">4. How to use C++ libraries?</h3>
-
-<p>Anything in the C++ standard library will work after including a header in your C++ source code files. For example, if you want to use <a href="https://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/"><code class="language-plaintext highlighter-rouge">std::cout</code> and its <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> operator</a>, you need include <code class="language-plaintext highlighter-rouge">iostream</code>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt; 
+<p>Remove folder:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   rm -r nameFolder
 </code></pre></div></div>
 
-<p>However, if you need to use an external library (eg CGAL), you will first need to configure some things for it to compile and link correctly. In IDEs (like Visual Studio or Xcode), this is usually done in the GUI. If you use CMake, this is typically done in your <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> file by first calling a script that finds the library. An example using CGAL:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find_package( CGAL REQUIRED )
+<p>Remove file:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   rm nameFile
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">REQUIRED</code> keyword makes CMake generate an error if CGAL is not found. This is good because knowing that something is broken with CGAL is much better than getting a cryptic error later on!</p>
-
-<p>Then, you will also need to add a few lines in your CMakeLists that link your project with the CGAL library:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add_executable( your_project_name your_source_file.cpp )
-target_link_libraries( your_project_name CGAL::CGAL )
+<p>Move inside a desired folder:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   cd /path/to/folder/
 </code></pre></div></div>
 
-<p>After those steps, adding the required headers in your <code class="language-plaintext highlighter-rouge">.cpp</code> file will work. For example, try adding this header to your <code class="language-plaintext highlighter-rouge">.cpp</code> file, building and running your project:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;CGAL/Exact_predicates_inexact_constructions_kernel.h&gt;
+<p>Move outside of a folder:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   cd ..
 </code></pre></div></div>
 
-<p>Note that if you use certain (more advanced) parts of CGAL, you will need to add more instructions to your <code class="language-plaintext highlighter-rouge">find_package</code> and <code class="language-plaintext highlighter-rouge">target_link_libraries</code> lines. There are some examples <a href="https://doc.cgal.org/latest/Manual/devman_create_and_use_a_cmakelist.html">here</a>.</p>
+<p>Create dummy file with 0KB size (necessary to visualize openFoam results):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   touch case.foam
+</code></pre></div></div>
 
-<h3 id="5-testing-your-c-with-cgal-installation">5. Testing your C++ with CGAL installation</h3>
+<p>Check what a command means and what are the arguments that can be passed:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   man command
+</code></pre></div></div>
 
-<p>In order to make sure that everything is working correctly, you should also test your C++ setup together with CGAL.</p>
+<h2 id="2-getting-comfortable-with-vi-or-nano">2. Getting comfortable with vi or nano:</h2>
 
-<p>We recommend that you do this in two steps. First, try one of the simpler CGAL library examples with no external dependencies, like <a href="https://doc.cgal.org/latest/Polygon/index.html#title3">this one</a>.</p>
+<p>To do your assignments you will need to use a text editor, we normally recommend three: vi, nano or gedit (this one has an interface).</p>
 
-<p>Then, try a more complex example with external dependencies, such as <a href="https://doc.cgal.org/latest/Polygon/index.html#title8">this one</a>, which requires Qt6. For that particular example, you will need to add more things to your CMakeLists file. See <a href="https://doc.cgal.org/latest/Manual/devman_create_and_use_a_cmakelist.html">here</a>.</p>
+<p>If you would like to learn vi, which is quite powerful and nice to use but has a steep learning curve go [here] (https://vimschool.netlify.app/introduction/vimtutor/).</p>
 
-<h3 id="acknowledgements">Acknowledgements</h3>
+<p>If you would like to learn nano, which has a somewhat smoother learning curve go <a href="https://www.nano-editor.org/docs.php">here</a></p>
 
-<p>The student assistants of different years have helped us a lot to figure out the best way to install things in different environments. In particular, Özge Tufan contributed most of the WSL instructions and Dimitris Mantas documented the method to use <code class="language-plaintext highlighter-rouge">vcpkg</code> with CLion.</p>
+<p>Gedit has an interface, so you can just type as in any text editor generally, but more information <a href="https://gedit-text-editor.org/index.html">here</a></p>
 
-<!-- ### Likely useful software for the course
+<h2 id="3-connecting-to-our-server-foote">3. Connecting to our server, foote</h2>
 
-  - [QGIS](https://qgis.org/): it has a rudimentary 3D viewer that could be useful and all of GDAL is available
-  - [GDAL utilities](https://gdal.org/programs/index.html): to process rasters (included with QGIS)
-  - [CloudCompare](http://cloudcompare.org/): to view/edit/process point clouds
-  - [Blender](https://www.blender.org/) and [BlenderGIS](https://github.com/domlysz/BlenderGIS): to view 3D models and render them beautifully -->
+<p>Within our class we will use the Urbanism server which belongs to the department and it is used by researchers within it. 
+It is important to keep in mind the best practices within the server to guarantee that everyone can use it for their work.</p>
 
-<p>[last updated: 2026-04-21 16:08]</p>
+<h3 id="best-practices">Best practices</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Always do top to check how many people are running in the machine
+- Unless the machine is empty, please do not run with 32 cores
+- Most of your cases can run with just 16 cores
+</code></pre></div></div>
+
+<h3 id="setting-up-your-config-file">Setting up your config file</h3>
+<p>First modify your config file insider folder .ssh in linux, if you don’t have the .ssh folder create it, and then create the config file inside:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   mkdir .ssh
+   vi .ssh/config (or nano .ssh/config, or gedit .ssh/config)
+</code></pre></div></div>
+<p>The dot before ssh just means that it is a hidden folder in linux.</p>
+
+<p>Then add the following lines (keep indentation as it is, it does matter):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host bastion
+	Hostname student-linux.tudelft.nl
+  	User netid
+Host foote
+  	Hostname foote.bk.tudelft.nl
+  	ProxyCommand ssh -W %h:%p bastion
+  	ServerAliveInterval 600
+  	ForwardX11 yes
+  	User groupN 
+</code></pre></div></div>
+
+<h3 id="how-to-connect-to-the-server">How to connect to the server</h3>
+
+<p>To connect to the server you will be give a username and a password and you will need to connect through the tunnel (bastion) in order to be able to access our server. This means that if you would like to connect remotely from out of campus wifi you will need to install eduVPN for it to work. Assuming that your username is <strong>groupN</strong> these are the commands.</p>
+
+<p>To connect to the server:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh username@foote
+</code></pre></div></div>
+<p>The first time you connect you will be asked to approve the credentials, when it asks the question type <em>yes</em>.</p>
+
+<p>To load openFoam application:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>of2412
+</code></pre></div></div>
+
+<p>To copy local folders (your own computer) to the server, there are two ways (preeferable use rsync, since you don’t double copy this way):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -r /path/to/local/folder username@foote:/path/to/destinationfolder
+rsync -azhrP /path/to/local/folder username@foote:/path/to/destinationfolder
+</code></pre></div></div>
+
+<p>To copy from the server to your local folders (your own computer), there are two ways:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -r username@foote:/path/to/destinationfolder /path/to/local/folder 
+rsync -azhrP username@foote:/path/to/destinationfolder /path/to/local/folder 
+</code></pre></div></div>
+
+<p>To visualize the usage of the cluster:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>top
+</code></pre></div></div>
+<p>or</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htop
+</code></pre></div></div>
+
+<p>To get out of the server</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exit
+</code></pre></div></div>
+
+<h2 id="4-installing-and-using-paraview">4. Installing and using paraView</h2>
+<p>Most probable you will be doing your postprocessing with <a href="https://paraview.org">paraView</a> (although you could also do it in python, if interested just ask). This means that you need to install paraView in your computer and get comfortable with it by doing a few trys. There is a very good <a href="https://docs.paraview.org/en/latest/UsersGuide/index.html">tutorial</a> with all the necessary information to perform different plotting.</p>
+
+<h2 id="5-openfoam-use">5. OpenFOAM use</h2>
+
+<p>OpenFOAM is installed for all users within the server, so it needs no installation, unless you want to use it in your computer. If you want to do that we can also support you with the installation.</p>
+
+<h3 id="most-common-comands-used-when-running-openfoam">Most common comands used when running OpenFOAM:</h3>
+
+<p>To extract the edges of your geometries improving mesh generation steps:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   surfaceFeatures
+</code></pre></div></div>
+
+<p>To create the background mesh for your case:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   blockMesh
+</code></pre></div></div>
+
+<p>To decompose your case in several processors for parallel computation:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   decomposePar
+</code></pre></div></div>
+
+<p>To run the meshing process in parallel:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   mpirun -np numberProcessors snappyHexMesh -parallel &gt; log.SHM &amp;
+</code></pre></div></div>
+
+<p>To reconstruct the mesh for visualization:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    reconstructParMesh
+</code></pre></div></div>
+
+<p>To run your case in parallel</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   mpirun -np numberProcessors simpleTransportFoam -parallel &gt; log.SF &amp;
+</code></pre></div></div>
+
+<p>To reconstruct your case:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   reconstructPar  
+</code></pre></div></div>
+<p>To postprocess <a href="https://github.com/gsclara/scripts/blob/main/plotResidualsOF.py">residuals</a> with python:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   postProcesssing residuals --&gt; https://github.com/gsclara/scripts/blob/main/plotResidualsOF.py 
+</code></pre></div></div>
+
+<p>For the previous command to work, you need to add to system/controlDict the following (at the end of file):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   functions
+   {
+        #includeFunc residuals
+   }
+</code></pre></div></div>
+<p>Note: notice the “simpleTransportFoam” here it is the general solver name for scalar dispersion case in the server (C for the name of variable and DC for the diffusion term)</p>
+
+<p>[last updated: 2026-08-20 12:12]</p>
 
 		
+	
+
 	
 
 	

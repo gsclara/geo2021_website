@@ -1,6 +1,6 @@
 ---
 layout: assignment
-assignment: 2
+assignment: resit2
 ---
 
 <img class="img-fluid" alt="cover" src="underConstruction.jpeg">

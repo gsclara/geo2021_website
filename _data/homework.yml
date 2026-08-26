@@ -18,8 +18,16 @@
   publish: true
   value: 75
 
-- number: resit
-  title: "Resit individual or group assigment"
+- number: resit1
+  title: "Resit individual assigment"
+  group: "This is an individual assignment."
   deadline: 2026-11-27T17:00
-  group: "This is an individual or group assignment."
   publish: true
+  value: 25 
+
+- number: resit2
+  title: "Resit group assigment"
+  group: "This is a group assignment."
+  deadline: 2026-11-27T17:00
+  publish: true
+  value: 75 
