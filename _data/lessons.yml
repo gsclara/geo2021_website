@@ -21,7 +21,6 @@
   publish: true
   toread:
     - "<i class='fa fa-download'></i> <a href='../../data/Class3_GEO5015.pdf'>Some mathematical and conceptual tools</a>"
-  publish: true
 
 - lesson: urbanCFD
   title: "Computational Fluid Dynamics applied to urban cases"
