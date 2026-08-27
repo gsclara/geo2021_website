@@ -18,7 +18,7 @@ resit: 2026-11-27T17:00
 
 #Server
 url: https://geomatics.bk.tudelft.nl
-baseurl: "/courses/geo5021"
+baseurl: "/geo5021"
 discord: "https://discord.gg/VKeSqYS6v"
 
 nav:
