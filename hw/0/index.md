@@ -61,7 +61,7 @@ Check what a command means and what are the arguments that can be passed:
 
 To do your assignments you will need to use a text editor, we normally recommend three: vi, nano or gedit (this one has an interface). 
 
-If you would like to learn vi, which is quite powerful and nice to use but has a steep learning curve go [here] (https://vimschool.netlify.app/introduction/vimtutor/).
+If you would like to learn vi, which is quite powerful and nice to use but has a steep learning curve go [here](https://vimschool.netlify.app/introduction/vimtutor/).
 
 If you would like to learn nano, which has a somewhat smoother learning curve go [here](https://www.nano-editor.org/docs.php)
 

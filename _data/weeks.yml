@@ -26,14 +26,13 @@
   roomhelp: A+BE Geolab
 
 - week: 4
-  continue: hw_1
+  submit: hw_1
   lesson1: equations
   room1: A+BE Hall P
   room2: A+BE Hall Z
   roomhelp: A+BE Geolab
 
 - week: 5
-  submit: hw_1
   start: hw_2
   lesson1: tke
   help: true

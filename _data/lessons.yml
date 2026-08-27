@@ -10,8 +10,7 @@
   title: "An introduction to the atmospheric boundary layer"
   who: "Clara"
   live: <i class="fas fa-chalkboard-teacher"></i> Winds
-  videos: 
-    - https://www.youtube.com/watch?v=PDEcAxfSYaI
+  videos: https://www.youtube.com/watch?v=PDEcAxfSYaI
   publish: true
   toread:
     - "<i class='fa fa-download'></i> <a href='../../data/Class2_GEO5015.pdf'>An introduction to the atmospheric boundary layer</a>"
