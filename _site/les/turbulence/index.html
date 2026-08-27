@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script>
     (function() {
-      var theme = localStorage.getItem('geo1004-theme');
+      var theme = localStorage.getItem('geo5021-theme');
       if (!theme) {
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
@@ -23,15 +23,15 @@
       var html = document.documentElement;
       var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-bs-theme', next);
-      localStorage.setItem('geo1004-theme', next);
+      localStorage.setItem('geo5021-theme', next);
       setThemeIcon(next);
     }
   </script>
   <title> The turbulence closure problem | GEO5021</title>
-  <meta name="description" content="GEO1004: 3D modelling of the built environment">
-  <meta name="keywords" content="GEO1004 3D modelling built environment">
+  <meta name="description" content="GEO5021: Modelling Wind and Dispersion">
+  <meta name="keywords" content="GEO5021: Modelling Wind and Dispersion">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Ken Arroyo Ohori">
+  <meta name="author" content="Clara Garcia-Sanchez">
   <link href="/courses/geo5021/css/bootstrap.min.css" rel="stylesheet">
   <link href="/courses/geo5021/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
@@ -41,6 +41,7 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3f1347;">
 	<div class="container">
