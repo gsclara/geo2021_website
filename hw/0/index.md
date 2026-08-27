@@ -105,40 +105,40 @@ To connect to the server you will be give a username and a password and you will
 
 To connect to the server:
 ```
-ssh username@foote
+   ssh username@foote
 ```
 The first time you connect you will be asked to approve the credentials, when it asks the question type *yes*.
 
 To load openFoam application:
 ```
-of2412
+   of2412
 ```
 
 To copy local folders (your own computer) to the server, there are two ways (preeferable use rsync, since you don't double copy this way): 
 
 ```
-scp -r /path/to/local/folder username@foote:/path/to/destinationfolder
-rsync -azhrP /path/to/local/folder username@foote:/path/to/destinationfolder
+   scp -r /path/to/local/folder username@foote:/path/to/destinationfolder
+   rsync -azhrP /path/to/local/folder username@foote:/path/to/destinationfolder
 ```
 
 To copy from the server to your local folders (your own computer), there are two ways: 
 ```
-scp -r username@foote:/path/to/destinationfolder /path/to/local/folder 
-rsync -azhrP username@foote:/path/to/destinationfolder /path/to/local/folder 
+   scp -r username@foote:/path/to/destinationfolder /path/to/local/folder 
+   rsync -azhrP username@foote:/path/to/destinationfolder /path/to/local/folder 
 ```
 
 To visualize the usage of the cluster:
 ```
-top
+  top
 ```
 or 
 ```
-htop
+  htop
 ```
 
 To get out of the server
 ```
-exit
+  exit
 ```
 
 ## 4. Installing and using paraView

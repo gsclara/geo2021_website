@@ -235,34 +235,34 @@ Host foote
 <p>To connect to the server you will be give a username and a password and you will need to connect through the tunnel (bastion) in order to be able to access our server. This means that if you would like to connect remotely from out of campus wifi you will need to install eduVPN for it to work. Assuming that your username is <strong>groupN</strong> these are the commands.</p>
 
 <p>To connect to the server:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh username@foote
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ssh username@foote
 </code></pre></div></div>
 <p>The first time you connect you will be asked to approve the credentials, when it asks the question type <em>yes</em>.</p>
 
 <p>To load openFoam application:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>of2412
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   of2412
 </code></pre></div></div>
 
 <p>To copy local folders (your own computer) to the server, there are two ways (preeferable use rsync, since you don’t double copy this way):</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -r /path/to/local/folder username@foote:/path/to/destinationfolder
-rsync -azhrP /path/to/local/folder username@foote:/path/to/destinationfolder
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   scp -r /path/to/local/folder username@foote:/path/to/destinationfolder
+   rsync -azhrP /path/to/local/folder username@foote:/path/to/destinationfolder
 </code></pre></div></div>
 
 <p>To copy from the server to your local folders (your own computer), there are two ways:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp -r username@foote:/path/to/destinationfolder /path/to/local/folder 
-rsync -azhrP username@foote:/path/to/destinationfolder /path/to/local/folder 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   scp -r username@foote:/path/to/destinationfolder /path/to/local/folder 
+   rsync -azhrP username@foote:/path/to/destinationfolder /path/to/local/folder 
 </code></pre></div></div>
 
 <p>To visualize the usage of the cluster:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>top
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  top
 </code></pre></div></div>
 <p>or</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htop
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  htop
 </code></pre></div></div>
 
 <p>To get out of the server</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  exit
 </code></pre></div></div>
 
 <h2 id="4-installing-and-using-paraview">4. Installing and using paraView</h2>

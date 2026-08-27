@@ -57,6 +57,6 @@
   who: "Clara/Themis"
   publish: true
   toread:
-    - "This sessions are for support of the assignment, please come to class to work together with your team and submit the assignment on time."
-
-
+    - "These presentations form the reference for the assignment in order to understand how to run a case with OpenFOAM and understand what we do when implementing dispersion in CFD."
+    - "<i class='fa fa-download'></i> <a href='../../data/Lab1_GEO5015.pdf'>Linux and OpenFOAM</a>"
+    - "<i class='fa fa-download'></i> <a href='../../data/Lab2_GEO5015.pdf'>Scalar implementation</a>"
