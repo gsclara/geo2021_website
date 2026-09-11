@@ -52,7 +52,7 @@ To complete this assignment you will need to:
 |what did the student do?|explained the domain size design guidelines|computed the correct domain size minimum and maximum (0.5)|
 |Q.4 |0.5|1/1.5|2||2|
 |what did the student do?|explained if the case is converged|previous question and proved that the case is converged through 1/2 ways| fixed if needed|
-|Q.4 |0.5|1|||1|
+|Q.5 |0.5|1|||1|
 |what did the student do?|shows plots to check acceleration|correctly explains why it happens or not| |
 
 ## Deliverables
