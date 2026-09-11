@@ -1,51 +1,55 @@
 - week: 1
   todos: "read <a href='about/'>about</a> page"
   lesson1: intro
-  lesson2: ABL
+  lesson2: abl
   help: true
   room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room2: A+BE Hall U
   roomhelp: A+BE Geolab
   start: hw_0
 
 - week: 2
   start: hw_1
-  lesson1: ABL
+  lesson1: abl
   lesson2: maths
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall P
+  room2: A+BE Hall U
   roomhelp: A+BE Geolab
 
 - week: 3
   continue: hw_1
-  lesson1: urbanCFD
+  lesson1: urbancfd
+  lesson2: urbancfd
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall V
+  room2: A+BE Hall U
   roomhelp: A+BE Geolab
 
 - week: 4
   submit: hw_1
   lesson1: equations
+  lesson2: equations
   room1: A+BE Hall P
-  room2: A+BE Hall Z
+  room2: A+BE Hall U
   roomhelp: A+BE Geolab
 
 - week: 5
   start: hw_2
   lesson1: tke
+  lesson2: tke
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall U
+  room2: A+BE Hall U
   roomhelp: A+BE Geolab
 
 - week: 6
   continue: hw_2
   lesson1: turbulence 
+  lesson2: turbulence 
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall V
+  room2: A+BE Hall Q
   roomhelp: A+BE Geolab
 
 - week: 7
@@ -53,8 +57,8 @@
   lesson1: support
   lesson2: support
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall F
+  room2: A+BE Hall C
   roomhelp: A+BE Geolab
 
 - week: 8
@@ -62,8 +66,8 @@
   lesson1: support
   lesson2: support
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Hall F
+  room2: A+BE Hall Q
   roomhelp: A+BE Geolab
 
 - week: 9
@@ -71,8 +75,8 @@
   lesson1: support
   lesson2: support
   help: true
-  room1: A+BE Hall Z
-  room2: A+BE Hall Z
+  room1: A+BE Geolab
+  room2: A+BE Geolab
   roomhelp: A+BE Geolab
 
 - week: 10

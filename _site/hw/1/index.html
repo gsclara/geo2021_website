@@ -137,14 +137,169 @@
 </p>
 				<p>The assignment is worth 25% of your final mark.</p>
 			
-			<p><img class="img-fluid" alt="cover" src="underConstruction.jpeg" /></p>
+			<p><img class="img-fluid" alt="cover" src="cover.jpeg" /></p>
 
 <hr />
+<ul id="markdown-toc">
+  <li><a href="#fix-the-mess-we-made" id="markdown-toc-fix-the-mess-we-made">Fix the mess we made</a>    <ul>
+      <li><a href="#ai-guidance" id="markdown-toc-ai-guidance">AI guidance</a></li>
+      <li><a href="#assignment" id="markdown-toc-assignment">Assignment</a></li>
+      <li><a href="#rubric" id="markdown-toc-rubric">Rubric</a></li>
+      <li><a href="#deliverables" id="markdown-toc-deliverables">Deliverables</a></li>
+    </ul>
+  </li>
+</ul>
 <hr />
 
-<p>#Coming soon!!!</p>
+<h1 id="fix-the-mess-we-made">Fix the mess we made</h1>
 
-<p>[last updated: 2026-08-25 14:37]</p>
+<p>Within this assignment you have a CFD case <a href="https://surfdrive.surf.nl/s/2KDHFDmPxRQETt9">here</a>. Unfortunately, we do not know why but the case seems to be messed up and it does not run properly, could you help us find the mistakes within the case? Our intention was to run a neutral atmospheric boundary layer case within a urban environment (no temperature involved).</p>
+
+<p>To accomplish this task you can use the class notes, the additional resources and the tutorials freely available from <a href="https://www.openfoam.com">OpenFOAM</a>.</p>
+
+<h2 id="ai-guidance">AI guidance</h2>
+
+<ul>
+  <li>Only AI to support coding for plots with python/paraview is allowed in this assignment</li>
+</ul>
+
+<h2 id="assignment">Assignment</h2>
+
+<p>Within the first part of the assignment you should fix the mistakes, and make sure the case runs properly (questions 1-2). Then you will need to read the following article (and the materials given through class) to reply to questions 3-4 https://doi.org/10.1016/j.buildenv.2015.02.015. If needed, you can assume z0=0.1m and that the velocity specified in the case was at 10m height.</p>
+
+<p>To complete this assignment you will need to:</p>
+
+<ol>
+  <li>Identify 4 mistakes within the case (3 points). Note: these are not format mistakes, but mistakes that make the case incorrectly set-up with the physical solution goal of your case</li>
+  <li>Explain how you fixed those mistakes to run the case (3 points)</li>
+  <li>Following the tips within the paper (and the course classes):
+    <ul>
+      <li>Is the domain size for the simulation appropriate? (0.5pts)</li>
+      <li>What would be the minimum and maximum domain size? (0.5pts)</li>
+    </ul>
+  </li>
+  <li>Following the tips within the paper (and the course classes):
+    <ul>
+      <li>Is the case converged? (0.5 pts)</li>
+      <li>How can you check and prove that? (1 pts)</li>
+      <li>If it is not converged, what can you do to fix that? (0.5 pts)</li>
+    </ul>
+  </li>
+  <li>Can you prove that the ABL profile is mantained along the domain? why?
+    <ul>
+      <li>Proof (0.5pts)</li>
+      <li>Explanation (0.5pts)</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="rubric">Rubric</h2>
+
+<table class="table table-responsive table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Questions</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q.1</td>
+      <td>0.75</td>
+      <td>1.5</td>
+      <td>2.25</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>what did the student do?</td>
+      <td>identified 1 mistake</td>
+      <td>identified 2 mistakes</td>
+      <td>identified 3 mistakes</td>
+      <td>identified 4 mistakes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Q.2</td>
+      <td>0.75</td>
+      <td>1.5</td>
+      <td>2.25</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>what did the student do?</td>
+      <td>explained and fixed 1 mistake</td>
+      <td>explained and fixed 2 mistakes</td>
+      <td>explained and fixed 3 mistakes</td>
+      <td>explained and fixed 4 mistakes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Q.3</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>what did the student do?</td>
+      <td>explained the domain size design guidelines</td>
+      <td>computed the correct domain size minimum and maximum (0.5)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Q.4</td>
+      <td>0.5</td>
+      <td>1/1.5</td>
+      <td>2</td>
+      <td> </td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>what did the student do?</td>
+      <td>explained if the case is converged</td>
+      <td>previous question and proved that the case is converged through 1/2 ways</td>
+      <td>fixed if needed</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Q.4</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>what did the student do?</td>
+      <td>shows plots to check acceleration</td>
+      <td>correctly explains why it happens or not</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="deliverables">Deliverables</h2>
+
+<p>You have two deliverables that need to be submitted before the deadline <a href="https://surfdrive.surf.nl/s/BtPmoAGQQ6QrJQD">here</a>. Please submit it in a compressed format file:</p>
+
+<ol>
+  <li>Short report replying to questions and reasoning your choices (*.pdf).</li>
+  <li>Fixed case with just folders 0,constant,system</li>
+</ol>
+
+<p>[last updated: 2026-09-09 14:37]</p>
 
 		
 	

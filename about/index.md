@@ -103,7 +103,7 @@ Formally, the following courses/knowledge are required prerequisites:
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<a href="https://research.tudelft.nl/en/persons/c-garcia-sanchez/"><img class="img-fluid rounded-circle w-75 h-70" src="{{ site.baseurl }}/img/clara.jpg" alt="Clara Garcia-Sanchez photo" /></a>
+			<a href="https://research.tudelft.nl/en/persons/c-garcia-sanchez/"><img class="img-fluid rounded-circle w-50 h-70" src="{{ site.baseurl }}/img/clara.jpg" alt="Clara Garcia-Sanchez photo" /></a>
 			<h4>Clara Garcia-Sanchez<br /></h4>
 			<p>
 			  gsclara&#35;5352 | 
@@ -121,6 +121,15 @@ Formally, the following courses/knowledge are required prerequisites:
 			  <a href="mailto:tvargiemezis@tudelft.nl"><i class="fas fa-envelope"></i></a>
 			</p>
 		</div>
+		<div class="col-md-4">
+                        <a href="https://3d.bk.tudelft.nl/apatil/"><img class="img-fluid rounded-circle w-50 h-70" src="{{ site.baseurl }}/img/akshay.jpg" alt="Akshay Patil photo" /></a>
+                        <h4>Akshay Patil<br /></h4>
+                        <p>
+                          akshay11235&#35;4639 | <a href="https://3d.bk.tudelft.nl/apatil/"><i class="fas fa-home"></i></a>
+                          |
+                          <a href="mailto:alpatil@tudelft.nl"><i class="fas fa-envelope"></i></a>
+                        </p>
+                </div>
 	</div>
 </div>
 
@@ -140,6 +149,6 @@ Formally, the following courses/knowledge are required prerequisites:
 </table>
 
 - a minimum of 50% in each assignment **and** a total mark of 57.5% (which rounds up to 6) are both necessary to pass the course;
-- there is one resits on the 3rd week of November;
+- there are resits on the 3rd week of November;
 - there is one resit for each homework;
 - if the student still fails after the resits, then the student has to redo the whole course (including assignments) the following year.

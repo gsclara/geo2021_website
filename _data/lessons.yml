@@ -6,14 +6,15 @@
   toread:
     - "<i class='fa fa-download'></i> <a href='../../data/Class1_GEO5015.pdf'>Introduction to Computational Fluid Dynamics</a>"
 
-- lesson: ABL
+- lesson: abl 
   title: "An introduction to the atmospheric boundary layer"
-  who: "Clara"
   live: <i class="fas fa-chalkboard-teacher"></i> Winds
-  videos: https://www.youtube.com/watch?v=PDEcAxfSYaI
+  who: "Clara"
   publish: true
   toread:
     - "<i class='fa fa-download'></i> <a href='../../data/Class2_GEO5015.pdf'>An introduction to the atmospheric boundary layer</a>"
+  notes:
+    - "To watch <a href='https://www.youtube.com/watch?v=PDEcAxfSYaI'> video</a>"
 
 - lesson: maths
   title: "Some mathematical and conceptual tools"
@@ -22,7 +23,7 @@
   toread:
     - "<i class='fa fa-download'></i> <a href='../../data/Class3_GEO5015.pdf'>Some mathematical and conceptual tools</a>"
 
-- lesson: urbanCFD
+- lesson: urbancfd
   title: "Computational Fluid Dynamics applied to urban cases"
   who: "Clara"
   toread:
