@@ -178,7 +178,7 @@ To reconstruct the mesh for visualization:
 
 To run your case in parallel
 ```
-   mpirun -np numberProcessors simpleTransportFoam -parallel > log.SF &
+   mpirun -np numberProcessors simpleTransportFoam -parallel >& log.SF &
 ```
 
 To reconstruct your case:
