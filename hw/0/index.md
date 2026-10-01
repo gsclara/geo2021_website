@@ -193,11 +193,26 @@ To postprocess [residuals](https://github.com/gsclara/scripts/blob/main/plotResi
 For the previous command to work, you need to add to system/controlDict the following (at the end of file):
 
 ```
-   functions
-   {
-        #includeFunc residuals
-   }
+functions
+{
+    #include "ensightWrite"
+    #include "vtkWrite"
+
+    // Demonstrate runTimePostProcessing
+    #include "visualization"
+    #include "profiling"
+    solverInfo
+    {
+        type            solverInfo;
+        libs            (utilityFunctionObjects);
+        fields          (p U k epsilon);
+        writeControl    timeStep;
+        writeInterval   1;
+    }
+}
+
 ```
+
 Note: notice the "simpleTransportFoam" here it is the general solver name for scalar dispersion case in the server (C for the name of variable and DC for the diffusion term)
 
 [last updated: 2026-08-20 12:12]

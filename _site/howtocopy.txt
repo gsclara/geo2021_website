@@ -1,0 +1,1 @@
+rsync -ahpz _site/* claragarciasan@geomatics:/var/www/courses/geo5021/
