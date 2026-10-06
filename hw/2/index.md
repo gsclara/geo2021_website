@@ -14,7 +14,7 @@ assignment: 2
 
 Buildings layout and organization in cities can impact the levels of pollution that surround us. Within this assignment you will have the possibility to explore the buildings effect on wind and passive scalar distributions, and how our knowledge in winds can help us to take action to improve local concentration and wind comfort.
 
-## Learning objectives:
+## Learning objectives
 
 1. Explain the process to link the 3D city model and the simulation tool used 
 2. Determine the necessary input data to simulate winds around 3D city models 
@@ -30,8 +30,8 @@ The assignment goal is to perform two Computational Fluid Dynamics (CFD) simulat
 
 ## Resources
 
-The first step to complete the assignment is to select two of the proposed geometries in the following table and mention why would you like to compare those two. 
-
+The first step to complete the assignment is to select two of the proposed geometries in the following table and mention why would you like to compare those two. Here you can download them [link](https://surfdrive.surf.nl/s/Gx3TBgzxt2crmrF).
+ 
 | Case number     	| Description |
 | ------------------| ----------- |
 | 1     	 			| LoD1        |
@@ -58,7 +58,7 @@ Here are a few more tips that might help you:
 	
 3. A short reflection explaining the role of each member within the group. Independent reflections can be directly submitted to me via email, in case of conflict. 
 
-4. Reply to the final extra question (2.5%): how would you prove that there is conservation of mass using your simulation results? can you prove it? (2.5%)
+4. Reply to the final question (2.5%): how would you prove that there is conservation of mass using your simulation results? can you prove it? (2.5%)
 
 ## Instructions
 
@@ -69,6 +69,7 @@ Other assumptions:
 * Consider the flow is steady.
 * For turbulence use the k-epsilon model.
 * The wind blows with velocity at height of 10m of: U = 6.0 m/s.
+* Continuous injection of a passive scalar at location (52.000458911007705, 4.376351547786692) of 100.
 * The wind blows parallel to the X axis direction.
 
 Upload to [here](https://surfdrive.surf.nl/s/wFb6PNqwif7dCjD) only one pdf report and a zip folder with the case (0, constant, system, latestTime folders) per group with the naming provided at the beginning of this document. The submission deadline is fixed to the 6th of November at 17:00. Please if you have a problem with the deadline contact me (Clara) directly through email to discuss it at least one week in advance. The minimum grade to use the assignment for average is 5.
