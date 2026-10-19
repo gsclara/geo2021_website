@@ -71,8 +71,11 @@ Other assumptions:
 * The wind blows with velocity at height of 10m of: U = 6.0 m/s.
 * Continuous injection of a passive scalar at location (52.000458911007705, 4.376351547786692) of 100.
 * The wind blows parallel to the X axis direction.
+* To run with dispersion, run with "scalarsimpleFoam"
 
 Upload to [here](https://surfdrive.surf.nl/s/wFb6PNqwif7dCjD) only one pdf report and a zip folder with the case (0, constant, system, latestTime folders) per group with the naming provided at the beginning of this document. The submission deadline is fixed to the 6th of November at 17:00. Please if you have a problem with the deadline contact me (Clara) directly through email to discuss it at least one week in advance. The minimum grade to use the assignment for average is 5.
+
+## Rubric
 
 The rubric with the grading scheme is included [here](https://surfdrive.surf.nl/s/H8zqfRZGN8aBdnE), be sure to check it out to know what each section grading entails. 
 
